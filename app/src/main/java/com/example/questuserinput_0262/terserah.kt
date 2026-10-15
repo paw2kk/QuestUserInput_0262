@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun FormDataDiri(modifier : Modifier) {
+fun FormDataDiri(modifier: Modifier, radioButton: (Boolean, () -> Unit?) -> Unit) {
     var textNama by remember { mutableStateOf(value="") }
     var textAlamat by remember { mutableStateOf(value="") }
     var textJK by remember { mutableStateOf(value="") }
@@ -47,7 +47,10 @@ fun FormDataDiri(modifier : Modifier) {
                     onClick = {textJK = item})
                 ), verticalAlignment = Alignment.CenterVertically) {
                     radioButton(
+                        selected = textJK == item,
+                        onClick = {
 
+                        }
                     )
             }
             }
