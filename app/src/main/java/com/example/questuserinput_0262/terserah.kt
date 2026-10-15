@@ -49,11 +49,21 @@ fun FormDataDiri(modifier: Modifier, radioButton: (Boolean, () -> Unit?) -> Unit
                     radioButton(
                         selected = textJK == item,
                         onClick = {
-
+                            selected = textJK == item
                         }
                     )
+                Text(item)
             }
             }
         }
     }
+    OutlinedTextField(
+        value = textAlamat,
+        singleLine = true,
+        modifier = Modifier.width(250.dp),
+        label = {Text(text = "Alamat")},
+        onValueChange = {
+            textAlamat = it
+    )
+        }
 }
